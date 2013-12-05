@@ -71,6 +71,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Content\ExternalWireup\Dependency.FlitBit.IoC.Web.Common.cs.pp" />
     <None Include="ExternalWireup\Dependency.FlitBit.IoC.Web.Common.cs.pp" />
     <None Include="FlitBit.IoC.Web.Common.nuspec" />
     <None Include="packages.config" />
