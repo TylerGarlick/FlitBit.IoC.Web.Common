@@ -4,10 +4,10 @@
     <version>$version$</version>
     <authors>Tyler Garlick</authors>
     <owners>Tyler Garlick</owners>
-    <id>$id$</id>
+    <id>FlitBit.IoC.Web.Common</id>
     <title>FlitBit.IoC.Web.Common</title>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>$description$</description>
+    <description>Shared functionality for the .net web stack (Mvc, WebApi, SignalR, Etc) for FlitBit.IoC framework.</description>
     <projectUrl>https://github.com/TylerGarlick/FlitBit.IoC.Web.Common</projectUrl>
     <dependencies>
       <dependency id="FlitBit.IoC"/>
@@ -15,6 +15,6 @@
     <tags>FlitBit.IoC, MVC, WebAPI, SignalR</tags>
   </metadata>
   <files>
-    <file src="Content\ExternalWireup\Dependency.FlitBit.IoC.Web.Common.cs.pp" target="ExternalWireup"/>
+    <file src="Content\ExternalWireup\Dependency.FlitBit.IoC.Web.Common.cs.pp" target="Content\ExternalWireup\"/>
   </files>
 </package>
