@@ -14,5 +14,8 @@
     </dependencies>
     <tags>FlitBit.IoC, MVC, WebAPI, SignalR</tags>
   </metadata>
-  <files />
+  <files>
+    <file src="ExternalWireup\Dependency.FlitBit.IoC.Web.Common.cs.pp" target="ExternalWireup"/>
+    <!--<file src="Content\App_Start\FlitBitDtoConfig.cs.pp" target="Content\App_Start" />-->
+  </files>
 </package>

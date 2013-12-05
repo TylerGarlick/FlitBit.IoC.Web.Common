@@ -61,8 +61,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IoC\AbstractHttpDependencyScope.cs" />
-    <Compile Include="IoC\AbstractDependencyResolver.cs" />
+    <Compile Include="Wireup.cs" />
+    <Compile Include="IoC\AbstractScopedDependencyResolver.cs" />
+    <Compile Include="IoC\ScopedDependencyResolverManager.cs" />
     <Compile Include="Json\DefaultJsonConverter.cs" />
     <Compile Include="Json\DefaultJsonSerializerSettings.cs" />
     <Compile Include="ExternalWireup\Dependency.FlitBit.IoC.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ExternalWireup\Dependency.FlitBit.IoC.Web.Common.cs.pp" />
     <None Include="FlitBit.IoC.Web.Common.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
