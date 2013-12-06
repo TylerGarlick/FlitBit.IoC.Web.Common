@@ -63,7 +63,6 @@
   <ItemGroup>
     <Compile Include="Wireup.cs" />
     <Compile Include="IoC\AbstractScopedDependencyResolver.cs" />
-    <Compile Include="IoC\ScopedDependencyResolverManager.cs" />
     <Compile Include="Json\DefaultJsonConverter.cs" />
     <Compile Include="Json\DefaultJsonSerializerSettings.cs" />
     <Compile Include="ExternalWireup\Dependency.FlitBit.IoC.cs" />

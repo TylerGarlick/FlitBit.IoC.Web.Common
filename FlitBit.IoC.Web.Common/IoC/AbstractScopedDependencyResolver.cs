@@ -1,34 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
-using FlitBit.Core;
 
 namespace FlitBit.IoC.Web.Common.IoC
 {
-    public abstract class AbstractScopedDependencyResolver : IDisposable
+    public abstract class AbstractScopedDependencyResolver
     {
-        IContainer _container;
+        readonly IContainer _container;
 
-        IScopedDependencyResolverManager DependencyResolver { get; set; }
-
-        protected AbstractScopedDependencyResolver(IContainer container)
+        protected AbstractScopedDependencyResolver()
         {
-            _container = container;
-            DependencyResolver = Create.New<IScopedDependencyResolverManager>();
+            _container = Container.Current;
         }
 
-        public virtual object GetService(Type serviceType)
+        protected virtual object ResolveService(Type serviceType)
         {
-            return DependencyResolver.GetService(_container, serviceType);
+            if (_container.CanConstruct(serviceType))
+                return _container.NewUntyped(LifespanTracking.Automatic, serviceType);
+            return default(Type);
         }
 
-        public virtual IEnumerable<object> GetServices(Type serviceType)
+        protected virtual IEnumerable<object> ResolveServices(Type serviceType)
         {
-            return DependencyResolver.GetServices(_container, serviceType);
-        }
-
-        public void Dispose()
-        {
-            Util.Dispose(ref _container);
+            if (_container.CanConstruct(serviceType))
+            {
+                var enumerable = typeof(IEnumerable<>).MakeGenericType(serviceType);
+                return (IEnumerable<object>)_container.NewUntyped(LifespanTracking.Automatic, enumerable);
+            }
+            return default(IEnumerable<object>);
         }
     }
 }
