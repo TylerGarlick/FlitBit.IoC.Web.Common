@@ -8,6 +8,7 @@ namespace FlitBit.IoC.Web.Common
     {
         public void Execute(IWireupCoordinator coordinator)
         {
+            
         }
     }
 }

@@ -9,7 +9,7 @@ namespace FlitBit.IoC.Web.Common.IoC
 
         protected AbstractScopedDependencyResolver()
         {
-            _container = Container.Current;
+            _container = ContainerHelpers.Current;
         }
 
         protected virtual object ResolveService(Type serviceType)
