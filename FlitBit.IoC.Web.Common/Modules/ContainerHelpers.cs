@@ -1,4 +1,6 @@
-﻿namespace FlitBit.IoC.Web.Common
+﻿using System.Web;
+
+namespace FlitBit.IoC.Web.Common
 {
     public static class ContainerHelpers
     {
@@ -6,17 +8,16 @@
         {
             get
             {
-                var containerHelper = Create.New<IPerHttpRequestContainer>();
-                if (containerHelper.Current == null)
-                    containerHelper.Current = Container.Current.MakeChildContainer(CreationContextOptions.InstanceTracking);
+                var currentContainer = HttpContext.Current.Items[Constants.ContainerNamePerRequest];
+                if (currentContainer == null)
+                    HttpContext.Current.Items[Constants.ContainerNamePerRequest] = Container.Current.MakeChildContainer(CreationContextOptions.InstanceTracking);
 
-                return Create.New<IPerHttpRequestContainer>().Current;
+
+                return (IContainer)HttpContext.Current.Items[Constants.ContainerNamePerRequest];
             }
             set
             {
-                var containerHelper = Create.New<IPerHttpRequestContainer>();
-                if (containerHelper != null)
-                    containerHelper.Current = value;
+                HttpContext.Current.Items[Constants.ContainerNamePerRequest] = value;
             }
         }
     }

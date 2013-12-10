@@ -8,10 +8,7 @@ namespace FlitBit.IoC.Web.Common
     {
         public void Execute(IWireupCoordinator coordinator)
         {
-            Container.Root.ForType<IPerHttpRequestContainer>()
-                     .Register<DefaultPerHttpRequestContainer>()
-                     .ResolveAnInstancePerScope()
-                     .End();
+
         }
     }
 }
