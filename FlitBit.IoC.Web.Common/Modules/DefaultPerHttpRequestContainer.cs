@@ -1,5 +1,4 @@
 ﻿using System.Web;
-using FlitBit.IoC.Meta;
 
 namespace FlitBit.IoC.Web.Common
 {
@@ -8,7 +7,6 @@ namespace FlitBit.IoC.Web.Common
         IContainer Current { get; set; }
     }
 
-    [ContainerRegister(typeof(IPerHttpRequestContainer), RegistrationBehaviors.Default)]
     public class DefaultPerHttpRequestContainer : IPerHttpRequestContainer
     {
         public IContainer Current
