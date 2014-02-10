@@ -10,7 +10,8 @@
     <description>Shared functionality for the .net web stack (Mvc, WebApi, SignalR, Etc) for FlitBit.IoC framework.</description>
     <projectUrl>https://github.com/TylerGarlick/FlitBit.IoC.Web.Common</projectUrl>
     <dependencies>
-      <dependency id="FlitBit.IoC"/>
+      <dependency id="FlitBit.IoC" version="2.13.1" />
+      <dependency id="Microsoft.Web.Infrastructure" version="1.0.0.0" />
     </dependencies>
     <tags>FlitBit.IoC, MVC, WebAPI, SignalR</tags>
   </metadata>
